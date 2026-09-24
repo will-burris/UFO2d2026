@@ -1,23 +1,24 @@
 using UnityEngine;
+using TMPro;
 
 public class Movement_Keys : MonoBehaviour
 {
     public float speed = 20.0f;
+    public int gold = 0;
+    public TMP_Text winText;
 
     private Rigidbody2D rb2d;
 
     private Vector3 startingScale;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
+    void Start(){
         rb2d = GetComponent<Rigidbody2D>();
         startingScale = transform.localScale;
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update(){
         Vector2 direction = Vector2.zero;
 
         //Inputs the "Vertical" and "Horizontal" with their own directions on the x and y axis.
@@ -45,4 +46,22 @@ public class Movement_Keys : MonoBehaviour
     void OnCollisionEnter2D(Collision2D _collision){
         transform.localScale = startingScale * 1.2f;
     }
+
+    public void AddGold(int _amount){
+        
+        gold += _amount;
+
+        GameObject goldTextGO = GameObject.Find("Gold Text (TMP)");
+
+        if(goldTextGO){
+            goldTextGO.GetComponent<TMP_Text>().text = gold.ToString();
+            if(gold == 8){
+                if(winText){
+                winText.enabled = true;
+                Time.timeScale = 0.0f;
+                }
+            }
+        }
+    }
+
 }

@@ -44,11 +44,11 @@ TagManager:
   - name: Background
     uniqueID: 350914645
     locked: 0
-  - name: Player
-    uniqueID: 1524957645
-    locked: 0
   - name: Pickups
     uniqueID: 2873023489
+    locked: 0
+  - name: Player
+    uniqueID: 1524957645
     locked: 0
   m_RenderingLayers:
   - Default
