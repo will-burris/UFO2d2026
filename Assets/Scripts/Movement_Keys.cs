@@ -55,7 +55,7 @@ public class Movement_Keys : MonoBehaviour
 
         if(goldTextGO){
             goldTextGO.GetComponent<TMP_Text>().text = gold.ToString();
-            if(gold == 8){
+            if(gold == 10){
                 if(winText){
                 winText.enabled = true;
                 Time.timeScale = 0.0f;
