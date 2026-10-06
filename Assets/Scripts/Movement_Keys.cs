@@ -5,6 +5,7 @@ public class Movement_Keys : MonoBehaviour
 {
     public float speed = 20.0f;
     public int gold = 0;
+
     public TMP_Text winText;
 
     private Rigidbody2D rb2d;
@@ -61,7 +62,6 @@ public class Movement_Keys : MonoBehaviour
                 Time.timeScale = 0.0f;
                 }
             }
-        }
+        }    
     }
-
 }
